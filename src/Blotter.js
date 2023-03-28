@@ -63,6 +63,19 @@ class Blotter extends Component {
         }
     };
 
+    handleFileUpload = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            const file = files[0];
+            if (file.type === "image/jpeg") {
+                console.log("File uploaded successfully");
+                // Perform file upload operations here
+            } else {
+                window.alert("Please upload a JPG file");
+            }
+        }
+    };
+
 
     onGridReady = (params) => {
         this.gridApi = params.api;
@@ -78,6 +91,12 @@ class Blotter extends Component {
                     <div className="toolbar">
                         <button onClick={() => this.toggleAddTradeModal()}>Add Trade</button>
                         <button onClick={this.handleSendAlert}>Send Alert</button>
+                        <input
+                            type="file"
+                            accept=".jpg"
+                            onChange={this.handleFileUpload}
+                            style={{ marginLeft: "10px" }}
+                        />
                     </div>
                     <AgGridReact
                         rowData={this.state.rowData}
@@ -92,6 +111,7 @@ class Blotter extends Component {
                     onAddTrade={this.addNewTrade}
                     onCancel={this.toggleAddTradeModal}
                 />
+                <iframe width='100%' height='600' src='https://qualtrics.gcs-web.com/stock-chart-iframe' title="XM Chart"></iframe>
             </div>
         );
     }
