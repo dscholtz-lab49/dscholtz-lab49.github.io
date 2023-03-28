@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
-import "./Blotter.css";
 import mockData from "./mockData.json";
+import AddTradeModal from "./AddTradeModal";
 
 class Blotter extends Component {
     state = {
@@ -30,7 +30,24 @@ class Blotter extends Component {
             resizable: true,
         },
         rowSelection: "multiple",
+        isAddTradeModalOpen: false,
     };
+
+    toggleAddTradeModal = () => {
+        this.setState((prevState) => ({
+            isAddTradeModalOpen: !prevState.isAddTradeModalOpen,
+        }));
+    };
+
+    addNewTrade = (trade) => {
+        const tradeId = this.state.rowData.length + 1;
+        const tradeDate = new Date().toISOString().slice(0, 10);
+        const newTrade = { tradeId, tradeDate, ...trade, productName: trade.product };
+        this.setState((prevState) => ({
+            rowData: [...prevState.rowData, newTrade],
+        }));
+    };
+
 
     render() {
         return (
@@ -39,6 +56,9 @@ class Blotter extends Component {
                     className="ag-theme-alpine-dark"
                     style={{ height: 400, width: "100%", margin: "0 auto" }}
                 >
+                    <div className="toolbar">
+                        <button onClick={() => this.toggleAddTradeModal()}>Add Trade</button>
+                    </div>
                     <AgGridReact
                         rowData={this.state.rowData}
                         columnDefs={this.state.columnDefs}
@@ -46,6 +66,11 @@ class Blotter extends Component {
                         rowSelection={this.state.rowSelection}
                     />
                 </div>
+                <AddTradeModal
+                    visible={this.state.isAddTradeModalOpen}
+                    onAddTrade={this.addNewTrade}
+                    onCancel={this.toggleAddTradeModal}
+                />
             </div>
         );
     }

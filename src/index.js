@@ -5,6 +5,7 @@ import './Login.css'
 import './Blotter.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './AddTradeModal.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

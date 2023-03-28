@@ -1,0 +1,163 @@
+.ant-modal-mask {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.ant-modal-content {
+    background-color: #2d2d2d !important;
+    color: #fff !important;
+}
+
+
+.ant-form-item-label>label {
+    color: #fff;
+}
+
+.ant-modal-close-x {
+    color: #fff !important;
+}
+
+.ant-modal-header {
+    background-color: #2d2d2d !important;
+    color: #fff !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+.ant-modal-title {
+    color: #fff !important;
+}
+
+.ant-modal-footer {
+    background-color: #2d2d2d !important;
+}
+
+.ant-input {
+    background-color: #2d2d2d;
+    border-color: #666666;
+    color: #ffffff;
+}
+
+input[id="product"] {
+    background-color: #2d2d2d;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.ant-input:focus,
+.ant-input:hover {
+    border-color: #1890ff;
+}
+
+.ant-input-number-handler-wrap .ant-input-number-handler {
+    background-color: #2d2d2d;
+    border-color: #666666;
+    color: #ffffff;
+}
+
+.ant-input-number-handler:hover {
+    background-color: #3f3f3f;
+    border-color: #1890ff;
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    background-color: #2d2d2d;
+    border-color: #666666;
+    color: #ffffff;
+}
+
+.ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    color: #bfbfbf;
+}
+
+.ant-select-single .ant-select-selector .ant-select-selection-item {
+    color: #ffffff;
+}
+
+.ant-select-dropdown-menu-item:hover,
+.ant-select-dropdown-menu-item-active {
+    background-color: #3f3f3f;
+    color: #ffffff;
+}
+
+.ant-btn-primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+}
+
+.ant-btn-danger {
+    background-color: #ff4d4f;
+    border-color: #ff4d4f;
+}
+
+.ant-btn-danger:hover,
+.ant-btn-danger:focus {
+    background-color: #ff7875;
+    border-color: #ff7875;
+}
+
+.ant-select-dropdown {
+    background-color: #444444;
+    color: #f0f0f0;
+}
+
+.ant-select-dropdown-menu-item {
+    background-color: #444444;
+    color: #f0f0f0;
+}
+
+.ant-select-dropdown-menu-item-active,
+.ant-select-dropdown-menu-item-selected {
+    background-color: #555555 !important;
+    color: #ffffff;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #bfbfbf !important;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #bfbfbf !important;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #bfbfbf !important;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #bfbfbf !important;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #bfbfbf !important;
+}
+
+::placeholder {
+    /* Most modern browsers support this syntax */
+    color: #bfbfbf !important;
+}
+
+.ant-select-item-option-content {
+    color: #fff !important;
+}
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background-color: #1890ff !important;
+    color: #fff !important;
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: #1890ff !important;
+    color: #fff !important;
+}
