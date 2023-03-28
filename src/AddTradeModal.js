@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Modal, Form, Input, Select, message } from "antd";
+import { Modal, Form, Input, Select } from "antd";
 
 const { Option } = Select;
 
@@ -11,16 +11,12 @@ class AddTradeModal extends Component {
         this.formRef.current
             .validateFields()
             .then((values) => {
-                if (values.notional < 0) {
-                    throw new Error("Notional must be greater than or equal to 0");
-                }
                 onAddTrade(values);
                 this.formRef.current.resetFields();
                 onCancel();
             })
             .catch((errorInfo) => {
                 console.log("Validation Failed:", errorInfo);
-                message.error(errorInfo.message);
             });
     };
 
@@ -57,6 +53,16 @@ class AddTradeModal extends Component {
                                 required: true,
                                 message: "Please enter a notional",
                             },
+                            ({ getFieldValue }) => ({
+                                validator(_, value) {
+                                    if (!value || value >= 0) {
+                                        return Promise.resolve();
+                                    }
+                                    return Promise.reject(
+                                        new Error("Notional must be greater than or equal to 0")
+                                    );
+                                },
+                            }),
                         ]}
                     >
                         <Input type="number" placeholder="Enter notional" />
