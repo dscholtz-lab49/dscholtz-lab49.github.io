@@ -42,12 +42,31 @@ class Blotter extends Component {
     addNewTrade = (trade) => {
         const tradeId = this.state.rowData.length + 1;
         const tradeDate = new Date().toISOString().slice(0, 10);
-        const newTrade = { tradeId, tradeDate, ...trade, productName: trade.product };
+        const newTrade = {
+            tradeId,
+            tradeDate,
+            ...trade,
+            productName: trade.product,
+        };
         this.setState((prevState) => ({
             rowData: [...prevState.rowData, newTrade],
         }));
     };
 
+    handleSendAlert = () => {
+        const selectedRows = this.gridApi.getSelectedRows();
+        if (selectedRows.length > 0) {
+            const selectedProducts = selectedRows.map((row) => row.productName).join(", ");
+            window.alert(`You have new trades of ${selectedProducts}`);
+        } else {
+            window.alert("Please select at least one trade to send an alert");
+        }
+    };
+
+
+    onGridReady = (params) => {
+        this.gridApi = params.api;
+    };
 
     render() {
         return (
@@ -58,12 +77,14 @@ class Blotter extends Component {
                 >
                     <div className="toolbar">
                         <button onClick={() => this.toggleAddTradeModal()}>Add Trade</button>
+                        <button onClick={this.handleSendAlert}>Send Alert</button>
                     </div>
                     <AgGridReact
                         rowData={this.state.rowData}
                         columnDefs={this.state.columnDefs}
                         defaultColDef={this.state.defaultColDef}
                         rowSelection={this.state.rowSelection}
+                        onGridReady={this.onGridReady}
                     />
                 </div>
                 <AddTradeModal
