@@ -68,7 +68,7 @@ class Blotter extends Component {
         if (files && files.length > 0) {
             const file = files[0];
             if (file.type === "image/jpeg") {
-                console.log("File uploaded successfully");
+                window.alert("File uploaded successfully");
                 // Perform file upload operations here
             } else {
                 window.alert("Please upload a JPG file");
