@@ -1,0 +1,52 @@
+:root {
+    --bg-color: #1c1c1c;
+    /* dark background color */
+    --text-color: #ffffff;
+    /* light text color */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #555555;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #252525;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    border: 1px solid #555555;
+    padding: 10px;
+    border-radius: 3px;
+    width: 100%;
+    background-color: #1c1c1c;
+    color: #ffffff;
+}

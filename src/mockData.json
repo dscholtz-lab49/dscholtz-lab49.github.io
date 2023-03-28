@@ -1,0 +1,37 @@
+[
+    {
+        "tradeId": "1",
+        "productName": "Apple",
+        "notional": "1000",
+        "direction": "BUY",
+        "tradeDate": "2022-01-01"
+    },
+    {
+        "tradeId": "2",
+        "productName": "Microsoft",
+        "notional": "2000",
+        "direction": "SELL",
+        "tradeDate": "2022-01-02"
+    },
+    {
+        "tradeId": "3",
+        "productName": "Amazon",
+        "notional": "1500",
+        "direction": "BUY",
+        "tradeDate": "2022-01-03"
+    },
+    {
+        "tradeId": "4",
+        "productName": "Google",
+        "notional": "3000",
+        "direction": "SELL",
+        "tradeDate": "2022-01-04"
+    },
+    {
+        "tradeId": "5",
+        "productName": "Facebook",
+        "notional": "500",
+        "direction": "BUY",
+        "tradeDate": "2022-01-05"
+    }
+]
