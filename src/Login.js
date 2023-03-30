@@ -22,7 +22,6 @@ function Login(props) {
         event.preventDefault();
 
         if (username === "admin" && password === "password") {
-            const { from } = props;
             setRedirectToReferrer(true);
         } else {
             setLoginError(true);
